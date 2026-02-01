@@ -1,47 +1,63 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Admin Login</title>
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{asset('tema/assets/images/favicon.ico')}}">
+    <!-- Theme Config Js -->
+    <script src="{{asset('tema/assets/js/config.js')}}"></script>
+    <!-- Vendor css -->
+    <link href="{{asset('tema/assets/css/vendors.min.css')}}" rel="stylesheet" type="text/css">
+    <!-- App css -->
+    <link href="{{asset('tema/assets/css/app.min.css')}}" rel="stylesheet" type="text/css">
+</head>
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+<body>
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    <div class="auth-box overflow-hidden align-items-center d-flex">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xxl-4 col-md-4 col-sm-8">
+                    <div class="card p-4 rounded-4">
+                        <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                            <div class="mb-3">
+                                <label for="userEmail" class="form-label">Masukan Email <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" name="email" id="userEmail" placeholder="angga@example.com" required>
+                                </div>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="userPassword" class="form-label">Password <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="userPassword" name="password" placeholder="••••••••" required>
+                                </div>
+                            </div>
+    
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary fw-semibold py-2">Masuk</button>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <p class="text-center text-muted mt-4 mb-0">
+                        © 2014 - <script>document.write(new Date().getFullYear())</script> portoapp — by <span class="fw-semibold">kokitindo</span>
+                    </p>
+                </div>
+            </div>
         </div>
+    </div>
+    
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+    <!-- end auth-fluid-->
+    <!-- Vendor js -->
+    <script src="{{asset('tema/assets/js/vendors.min.js')}}"></script>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+    <!-- App js -->
+    <script src="{{asset('tema/assets/js/app.js')}}"></script>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+</body>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</html>
