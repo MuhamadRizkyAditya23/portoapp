@@ -16,6 +16,11 @@ Route::get('/tentangkami', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/hai', function () {
+    return view('admin.hai');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 
 Route::middleware('auth')->group(function () {
