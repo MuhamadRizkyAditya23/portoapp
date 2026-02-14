@@ -1,0 +1,5 @@
+@extends('admin.layouts.layouts')
+
+@section('content')
+isi konten sesuai yang kita mau
+@endsection
