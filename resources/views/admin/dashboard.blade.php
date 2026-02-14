@@ -1,1 +1,5 @@
-hai dunia
+@extends('admin.layouts.layoutscth')
+
+@section('content')
+
+@endsection
