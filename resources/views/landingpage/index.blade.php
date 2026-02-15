@@ -1,12 +1,13 @@
 @extends('landingpage.layouts')
 
 @section('content')
-<section class="hero">
-        <h1>Tingkatkan Bisnis Anda Secara Digital 🚀</h1>
-        <p>Kami membantu brand berkembang dengan strategi digital marketing yang terbukti meningkatkan traffic, leads, dan penjualan.</p>
-        <a href="#" class="btn">Mulai Sekarang</a>
-    </section>
-    
+<section class="section">
+    <h1>Tingkatkan Bisnis Anda Secara Digital 🚀</h1>
+    <p>Kami membantu brand berkembang dengan strategi digital marketing yang terbukti meningkatkan traffic, leads, dan penjualan.</p>
+    <a href="#" class="btn">Mulai Sekarang</a>
+</section>
+
+<!-- ===== LAYANAN ===== -->
 <section class="section">
     <div class="container">
         <h2>Layanan Kami</h2>
@@ -27,6 +28,7 @@
     </div>
 </section>
 
+<!-- ===== STATS ===== -->
 <section class="section" style="background: rgba(0,0,0,0.2);">
     <div class="container">
         <h2>Dipercaya Banyak Klien</h2>
@@ -47,13 +49,15 @@
     </div>
 </section>
 
+<!-- ===== CTA ===== -->
 <section class="section">
     <div class="container">
         <h2>🎁 GRATIS Audit Digital Marketing</h2>
         <p>Dapatkan analisa & strategi khusus untuk bisnis Anda sekarang juga.</p>
         <br>
         <a href="#" class="btn">Ambil Audit Gratis</a>
-    </div>
 </section>
+        </div>
 
 @endsection
+

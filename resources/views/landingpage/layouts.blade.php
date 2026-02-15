@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Digital Marketing Agency @yield('title')</title>
+<title>Porto App - Digital Agency</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 * {
@@ -25,16 +25,82 @@ body {
     margin: auto;
 }
 
-header {
-    padding: 20px 0;
+/* ===== NAVBAR ===== */
+.navbar {
+    width: 100%;
+    padding: 18px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: linear-gradient(90deg, #081c45, #0a2472);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
     font-weight: 700;
+    color: white;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border-radius: 8px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: #38bdf8;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    padding: 12px 28px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+    opacity: 0.85;
+}
+
+/* ===== HERO ===== */
+.hero {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 30px;
 }
 
 .btn {
@@ -53,22 +119,7 @@ header {
     transform: translateY(-3px);
 }
 
-.hero {
-    padding: 100px 0;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    opacity: 0.9;
-    margin-bottom: 30px;
-}
-
+/* ===== SECTION ===== */
 .section {
     padding: 80px 0;
     text-align: center;
@@ -98,6 +149,7 @@ header {
     margin-bottom: 15px;
 }
 
+/* ===== STATS ===== */
 .stats {
     display: flex;
     justify-content: space-around;
@@ -111,12 +163,20 @@ header {
     color: #60a5fa;
 }
 
+/* ===== FOOTER ===== */
 footer {
-    padding: 30px 0;
+    padding: 10px 0;
     text-align: center;
     font-size: 14px;
     opacity: 0.8;
     border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -128,18 +188,14 @@ footer {
 </head>
 <body>
 
-<div class="container">
-    
-    @include('landingpage.header')
+@include('landingpage.header')
+     
+<section class="hero container">
+   @yield('content')
 
-    @yield('content')
+    </div>
 
-
-</div>
-
-<footer>
-    © 2026 Rizky Digital Agency. All Rights Reserved.
-</footer>
+    @include('landingpage.footer')
 
 </body>
 </html>

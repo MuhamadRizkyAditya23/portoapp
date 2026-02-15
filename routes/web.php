@@ -8,6 +8,11 @@ Route::get('/', function () {
     return view('landingpage.index');
 });
 
+Route::get('/landingpage', function () {
+    return view('landingpage.index'); 
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
